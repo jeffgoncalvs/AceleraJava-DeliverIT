@@ -1,12 +1,11 @@
 package com.company;
+
 import java.util.Scanner;
 
 public class Main {
 
 
-
-
-    public Main(){
+    public Main() {
     }
 
     public static void main(String[] args) {
@@ -15,28 +14,40 @@ public class Main {
         gerenciaAluno = new GerenciaAluno();
         Scanner sc1 = new Scanner(System.in);
 
-        System.out.println("Informe o nome do aluno: ");
-        sc1.
+        boolean iniciaPrograma = true;
 
 
 
+        while (iniciaPrograma){
 
-        Aluno aluno1 = new Aluno(sc1.nextLine(), sc1.nextInt(),1234567890);
-        Aluno aluno2 = new Aluno("Fulano da Silva2", 7,1234567890);
-        Aluno aluno3 = new Aluno("Fulano da Silva3", 11,123490);
-        Aluno aluno4 = new Aluno(null, null,null);
-        Aluno aluno5 = new Aluno("Fulano da Silva4", 60,1234567890);
-        Aluno aluno6 = new Aluno("Fulano da Silva5",null ,1234567890);
-        Aluno aluno7 = new Aluno("Fulano da Silva", 11,null);
+            System.out.println("Digite opcao desejada: (1-Criar, 2-Listar, 9- sair) ");
+            int numero = sc1.nextInt();
 
-        gerenciaAluno.adicionaAluno(aluno1);
-        gerenciaAluno.adicionaAluno(aluno2);
-        gerenciaAluno.adicionaAluno(aluno3);
-        gerenciaAluno.adicionaAluno(aluno4);
-        gerenciaAluno.adicionaAluno(aluno5);
-        gerenciaAluno.adicionaAluno(aluno6);
-        gerenciaAluno.adicionaAluno(aluno7);
+            switch (numero) {
 
+                case 1:
+                    System.out.println("Informe o nome do aluno: ");
+                    String nomeAluno1 = sc1.next();
 
+                    System.out.println("Informe a idade do aluno: ");
+                    int idadeAluno1 = sc1.nextInt();
+
+                    System.out.println("Informe o documento do aluno: ");
+                    int docAluno1 = sc1.nextInt();
+
+                    aluno = new Aluno(nomeAluno1, idadeAluno1, docAluno1);
+                    gerenciaAluno.adicionaAluno(aluno);
+                    break;
+
+                case 2:
+                    gerenciaAluno.listaAlunos();
+                    break;
+
+                case 9:
+                    iniciaPrograma = false;
+                    break;
+
+            }
+        }
     }
 }

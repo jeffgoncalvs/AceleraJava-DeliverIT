@@ -26,4 +26,12 @@ public class GerenciaAluno {
             System.out.println("Aluno adicionando");
         }
     }
+
+    public void listaAlunos(){
+        for (Aluno alunoNalista : listaAlunos) {
+            System.out.println("Nome do Aluno: "+ alunoNalista.getNome());
+            System.out.println("Idade do Aluno: "+ alunoNalista.getIdade());
+            System.out.println("Documento do Aluno: "+ alunoNalista.getDocumentoAluno());
+        }
+    }
 }
