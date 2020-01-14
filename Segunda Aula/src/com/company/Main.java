@@ -16,8 +16,6 @@ public class Main {
 
         boolean iniciaPrograma = true;
 
-
-
         while (iniciaPrograma){
 
             System.out.println("Digite opcao desejada: (1-Criar, 2-Listar, 9- sair) ");
